@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style type="text/css">
+        body{margin: 0;padding: 0;box-sizing: border-box}
+        .wrap{
+            width: 400px;
+            height: 400px;border: #333333 solid 2px;
+            margin: 0 auto;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #8f2e2e;
+            animation-name: translate,background,radius;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes background {
+            from{
+                background: #8f2e2e;
+            }
+            to{
+                background: #d9534f;
+            }
+        }
+        @keyframes translate {
+            25%{transform: translate(300px,0)}
+            50%{transform: translate(300px,300px)}
+            75%{transform: translate(0,300px)}
+        }
+        @keyframes radius {
+            25%{border-radius: 25%}
+            50%{border-radius: 50%}
+            75%{border-radius: 75%}
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box"></div>
+</div>
+</body>
+</html>

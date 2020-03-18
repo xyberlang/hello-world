@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flax</title>
+    <style type="text/css">
+        .wrap{
+            width: 600px;
+            height: 400px;
+            margin: 50px auto;
+            border: #CCCCCC solid 1px;
+            display: flex;
+            /*在主轴排列起点*/
+            justify-content: space-between;/*flex-end,center,*/
+            /*在交叉轴排列起点*/
+            align-items: flex-start;
+            /*排列方向*/
+            flex-direction: row;
+            /*是否换行*/
+            flex-wrap: wrap;
+            /*换行后的排列方式*/
+            align-content: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #7d9ac4;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            text-align: center;
+            border-left: #333333 solid 1px;
+            border-right:#333333 solid 1px;
+            font-size: 24px;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+</div>
+</body>
+</html>

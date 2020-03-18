@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation幻灯片</title>
+    <style type="text/css">
+        body{ }
+        .wrap{
+            width: 500px;height: 600px;background: #CCCCCC;margin: 0 auto;
+            position: relative;
+        }
+        .box{
+            width: 300px;height: 500px;background: #cf0003;position: absolute;color: #FFFFFF;text-align: center;font-size: 30px;line-height: 500px;
+        }
+        .img1{
+            top: 50px;left: 100px;z-index: 2;transform: translate(0,0) scale(1);opacity: 100%;
+            animation-name: Lb1;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+        }
+        .img2{
+            top: 50px;left: 0;z-index: 1;transform: translateX(-30px) scale(.75);opacity: 50%;
+            animation-name: Lb1;
+            animation-duration: 3s;
+            animation-delay: 1.9s;
+            animation-iteration-count: infinite;
+        }
+        .img3{
+            top: 50px;left: 200px;z-index: 1;transform: translateX(30px) scale(.75);opacity: 50%;
+            animation-name: Lb1;
+            animation-duration: 3s;
+            animation-delay: 2.8s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes Lb1 {
+            from{
+                left: 100px;z-index: 2;transform: translate(0,0) scale(1);opacity: 100%;
+            }
+            33%{
+                left: 0;z-index: 1;transform: translateX(-30px) scale(.75);opacity: 50%;
+            }
+            66%{
+                left: 200px;z-index: 1;transform: translateX(30px) scale(.75);opacity: 50%;
+            }
+            to{
+                left: 100px;z-index: 2;transform: translate(0,0) scale(1);opacity: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box img1">111</div>
+    <div class="box img2">222</div>
+    <div class="box img3">333</div>
+</div>
+</body>
+</html>

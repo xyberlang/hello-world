@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西奥求弹跳</title>
+    <style type="text/css">
+        body{padding: 0;margin: 0;background: #0c5460;}
+        .wrap{
+            width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;
+        }
+        .ball{
+            width: 200px;height: 200px;background: radial-gradient(at center,#ce8483,#8f2e2e);border-radius: 50%;
+            animation-name: ball;
+            animation-duration: 1s;
+            animation-direction: alternate-reverse;
+            animation-iteration-count: infinite;
+        }
+        section{
+            width: 240px;height: 80px;background: rgba(0,0,0,.2);border-radius: 50%;position: absolute;
+            transform: translateY(100px);z-index: -1;filter: blur(5px);
+            animation-name: shadow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        @keyframes ball {
+            to{
+                transform: translateY(-400px);
+            }
+        }
+        @keyframes shadow {
+            to{
+                width: 300px;height: 40px;background: rgba(0,0,0,.1);filter: blur(25px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="ball"></div>
+    <section></section>
+</div>
+</body>
+</html>

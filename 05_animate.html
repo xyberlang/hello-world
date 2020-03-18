@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <style type="text/css">
+        body{
+            margin: 0;padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #333333;
+        }
+        .wrap{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d9534f;
+            transform: scale(0);
+            animation-name: scale, background, radius;
+            animation-duration: 2s, 2s, 4s;
+            animation-fill-mode: forwards;
+        }
+        .wrap::after{
+            content: '欢迎';
+            color: #FFFFFF;
+            font-size: 5em;
+            opacity: 0;
+            animation-name: opacity;
+            animation-duration: 3s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes scale {
+            from{
+                transform: scale(0);
+            }
+            to{
+                transform: scale(1) rotate(360deg);
+            }
+        }
+        @keyframes background {
+            from{
+                background-color: #8f2e2e;
+            }
+            to{
+                background-color: #d9534f;
+            }
+        }
+        @keyframes radius {
+            from{
+                border-radius: 50%;
+            }
+            to{
+                border-radius: 0;
+            }
+        }
+        @keyframes opacity {
+            from{
+                opacity: 10%;
+            }
+            to{
+                opacity: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box"></div>
+</div>
+</body>
+</html>
