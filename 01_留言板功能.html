@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+  <style type="text/css">
+    * {
+      margin: 0;padding: 0;
+      box-sizing: border-box;
+    }
+    .name{
+      width: 90%;
+      height: 150px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+    }
+    .name-title{
+      width: 80px;height: 32px;font-size: 18px;display: block;
+      text-align: center;line-height: 32px;
+    }
+    .ipt-name{
+      flex: 1;height: 32px;border-radius: 4px;padding: 0 10px;font-size: 16px;
+      display: block;vertical-align: middle;
+    }
+    .content{
+      width: 90%;display: flex;margin: 0 auto;
+    }
+    .text-content{
+      flex: 1;height: 100px;min-height: 100px;padding: 0 8px;
+      font-size: 16px;line-height: 25px;
+      border-radius: 4px;
+      overflow-y: auto;
+    }
+    .btn{
+      width: 90%;height: 80px;display: flex;justify-content: center;align-items: center;margin: 0 auto;
+    }
+    .submit{
+      width: 100px;height: 32px;font-size: 18px;line-height: 32px;
+    }
+    .show{
+      width: 90%;margin: 0 auto 20px auto;
+      border: #333333 solid 1px;border-radius: 4px;
+    }
+    .show-title{
+      width: 100%;height: 40px;text-align: center;font-size: 24px;color: #FFFFFF;background-color: #2aabd2;
+      border-bottom: #333333 solid 1px;border-top-left-radius: 4px;border-top-right-radius: 4px;
+    }
+    .show-content{
+      list-style: none;font-size: 16px;
+    }
+    .content-item{
+      width: 96%;border: #CCCCCC solid 1px;border-radius: 4px;margin: 20px auto;padding: 5px 15px;
+    }
+
+  </style>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+      $(function () {
+        let arr1 = [];
+        $('#submit').on('click',function () {
+          let key = $('#name-ipt').val(), value = $('#text-content').val();
+          if(key.match(/^\w/) && value.match(/\./)){
+            let opt = {
+              key: key,
+              val: value
+            };
+            arr1.push(opt);
+            showList();
+          }
+        })
+        let showList = () => {
+          let message = '';
+          for(let i = arr1.length-1;i >= 0;i--) {
+            message += `
+            <li class="content-item">
+              <span class="item-name">${arr1[i].key} :</span>
+              <span class="item-con">${arr1[i].val}</span>
+            </li>
+          `;
+          }
+          $('#show-content').html(message);
+        }
+      })
+  </script>
+</head>
+<body>
+
+<div class="name">
+  <span class="name-title">昵称 ：</span>
+  <input id="name-ipt" type="text" class="ipt-name" placeholder="请输入昵称">
+</div>
+<div class="content">
+  <span class="name-title">评论 ：</span>
+  <textarea id="text-content" class="text-content" placeholder="评论"></textarea>
+</div>
+<div class="btn">
+  <button id="submit" class="submit">提交</button>
+</div>
+
+<div class="show">
+  <div class="show-title">评论</div>
+  <ul id="show-content" class="show-content">
+    <li class="content-item">
+      没有评论！
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>
